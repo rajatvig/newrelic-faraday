@@ -17,6 +17,7 @@ if defined?(::Faraday) and not NewRelic::Control.instance['disable_faraday']
 
     def parse_host_for_newrelic(url)
       begin
+        return host if host
         URI(url).host.to_s
       rescue
         ''

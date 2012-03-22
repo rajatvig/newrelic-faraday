@@ -1,18 +1,19 @@
-# -*- encoding: utf-8 -*-
+$LOAD_PATH.unshift 'lib'
+require "newrelic_faraday/version"
 
 Gem::Specification.new do |s|
   s.name = "newrelic-faraday"
-  s.version = "0.6.0"
+  s.version = NewrelicFaraday::VERSION::STRING
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Eric Abbott"]
   s.date = "2012-03-22"
   s.description = "Faraday instrumentation for Newrelic."
   s.email = ["eric.abbott@viximo.com"]
-  s.extra_rdoc_files = ["README.txt"]
-  s.files = ["README.txt", "lib/newrelic-faraday.rb", "lib/newrelic_faraday/instrumentation.rb", "lib/newrelic_faraday/version.rb", "newrelic-faraday.gemspec"]
+  s.has_rdoc = false
+  s.files = %w( README.rdoc newrelic-faraday.gemspec )
+  s.files += Dir.glob("lib/**/*")
   s.homepage = "http://github.com/Viximo/newrelic-faraday"
-  s.rdoc_options = ["--main", "README.txt"]
   s.require_paths = ["lib"]
   s.rubyforge_project = "newrelic-faraday"
   s.rubygems_version = "1.5.3"
