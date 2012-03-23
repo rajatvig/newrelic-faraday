@@ -11,13 +11,14 @@ Gem::Specification.new do |s|
   s.description = "Faraday instrumentation for Newrelic."
   s.email = ["eric.abbott@viximo.com"]
   s.has_rdoc = false
-  s.files = %w( README.rdoc newrelic-faraday.gemspec )
+  s.files = %w( README.rdoc LICENSE newrelic-faraday.gemspec )
   s.files += Dir.glob("lib/**/*")
   s.homepage = "http://github.com/Viximo/newrelic-faraday"
   s.require_paths = ["lib"]
   s.rubyforge_project = "newrelic-faraday"
   s.rubygems_version = "1.5.3"
   s.summary = "Faraday instrumentation for Newrelic."
+  s.license = "MIT"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
