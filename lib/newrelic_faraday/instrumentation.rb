@@ -1,4 +1,6 @@
-if defined?(::Faraday) and not NewRelic::Control.instance['disable_faraday']
+puts "AAAAAAAAAAAAAAAAAAAAA about to run faraday instrumentation"
+if defined?(::Faraday) and not NewRelic::Control.instance['disable_faraday'] and not ENV['NEWRELIC_ENABLE'].to_s =~ /false|off|no/i
+  puts "BBBBBBBBBBBBBB I'm running bitches!!!!"
   Faraday::Connection.class_eval do
     def run_request_with_newrelic_trace(method, url, params, headers, &block)
       newrelic_host = parse_host_for_newrelic url
