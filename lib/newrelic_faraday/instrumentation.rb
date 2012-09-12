@@ -2,7 +2,7 @@ if defined?(::Faraday) and not NewRelic::Control.instance['disable_faraday'] and
   Faraday::Connection.class_eval do
     def run_request_with_newrelic_trace(method, url, params, headers, &block)
       newrelic_host = parse_host_for_newrelic url
-      metrics = ["External/#{newrelic_host}/Faraday::Connection/#{method}", "External/#{newrelic_host}/all", "External/all"]
+      metrics = ["External/#{newrelic_host}/Faraday::Connection/#{method}/#{url}", "External/#{newrelic_host}/all", "External/all"]
       if NewRelic::Agent::Instrumentation::MetricFrame.recording_web_transaction?
         metrics << "External/allWeb"
       else
