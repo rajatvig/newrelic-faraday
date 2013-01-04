@@ -9,7 +9,6 @@ Gem::Specification.new do |s|
   s.authors = ["Eric Abbott"]
   s.description = "Faraday instrumentation for Newrelic."
   s.email = ["eric.abbott@viximo.com"]
-  s.has_rdoc = false
   s.files = %w( README.rdoc LICENSE newrelic-faraday.gemspec )
   s.files += Dir.glob("lib/**/*")
   s.homepage = "http://github.com/Viximo/newrelic-faraday"
@@ -26,17 +25,17 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<faraday>, ["< 0.9"])
       s.add_runtime_dependency(%q<faraday>, [">= 0.6"])
       s.add_runtime_dependency(%q<newrelic_rpm>, ["~> 3.0"])
-      s.add_development_dependency(%q<rdoc>, ["~> 3.10"])
+      s.add_development_dependency "rspec"
     else
       s.add_dependency(%q<faraday>, ["< 0.9"])
       s.add_dependency(%q<faraday>, [">= 0.6"])
       s.add_dependency(%q<newrelic_rpm>, ["~> 3.0"])
-      s.add_dependency(%q<rdoc>, ["~> 3.10"])
+      s.add_dependency "rspec"
     end
   else
     s.add_dependency(%q<faraday>, ["< 0.9"])
     s.add_dependency(%q<faraday>, [">= 0.6"])
     s.add_dependency(%q<newrelic_rpm>, ["~> 3.0"])
-    s.add_dependency(%q<rdoc>, ["~> 3.10"])
+    s.add_dependency "rspec"
   end
 end
