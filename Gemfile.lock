@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    newrelic-faraday (0.6.5)
+    newrelic-faraday (0.6.6)
       faraday (< 0.9)
       faraday (>= 0.6)
       newrelic_rpm (~> 3.0)
